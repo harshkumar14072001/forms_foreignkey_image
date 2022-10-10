@@ -1,0 +1,23 @@
+<html>
+<head>
+
+</head>
+<body>
+<h1>list of books</h1>
+{% for i in info %}
+book_name:{{i.title}}<br>
+no. of pages:{{i.pages}}<br>
+author name:{{i.created_by.name}}<br>
+address:{{i.created_by.address}}<br>
+
+{% if i.image %}
+<img src="{{i.image.url}}" width="100px" heights="100px"/>
+{% endif %}
+     <hr>
+{% endfor %}
+
+<b><a href="{% url 'author_form' %}">author</a></b>
+<b><a href="{% url 'book_form' %}">books</a></b>
+
+</body>
+</html>
